@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "重複タブ消し",
+  "version": "1.0",
+  "description": "同じページのタブを1つだけ残して閉じます",
+  "permissions": ["tabs"],
+  "action": { "default_title": "重複タブを閉じる" },
+  "background": { "scripts": ["background.js"] },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "jufuku-tab-keshi@hakusyaku-lab",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    },
+    "gecko_android": { "strict_min_version": "142.0" }
+  }
+}
