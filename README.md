@@ -12,7 +12,7 @@ Microsoft Edge / Google Chrome 用の拡張機能です。
 
 ## 入れ方（Edge）
 
-1. このリポジトリをダウンロードして展開する（Code → Download ZIP）
+1. [⬇ 最新版をダウンロード（JufukuTabKeshi.zip）](https://github.com/hakusyaku-lab/jufuku-tab-keshi/releases/latest/download/JufukuTabKeshi.zip)して展開する（展開したフォルダは消さずに置いておく）
 2. アドレスバーに `edge://extensions` と入力
 3. 「開発者モード」をオンにする
 4. 「展開して読み込み」で、`manifest.json` があるフォルダーを選ぶ
@@ -55,7 +55,7 @@ Chrome の場合は `chrome://extensions` で同じ手順です。
 **ずっと使う**
 
 Firefox は Mozilla の署名がない拡張を常用できません。
-[addons.mozilla.org の開発者ページ](https://addons.mozilla.org/developers/) で `firefox` フォルダーを ZIP にしてアップロードし、
+[addons.mozilla.org の開発者ページ](https://addons.mozilla.org/developers/) で [JufukuTabKeshi-firefox.zip](https://github.com/hakusyaku-lab/jufuku-tab-keshi/releases/latest/download/JufukuTabKeshi-firefox.zip) をそのままアップロードし、
 「自分で配布（On your own）」を選ぶと署名済みの `.xpi` がもらえます。これをFirefoxにドラッグすると入ります。
 Android版 Firefox で使う場合は、ストアで公開（On this site）する必要があります。
 
@@ -63,7 +63,7 @@ Android版 Firefox で使う場合は、ストアで公開（On this site）す�
 
 Safari の拡張は Mac と Xcode（無料）が必要です。Windows では作れません。
 
-1. Mac に Xcode を入れる
+1. Mac に Xcode を入れ、[JufukuTabKeshi-safari.zip](https://github.com/hakusyaku-lab/jufuku-tab-keshi/releases/latest/download/JufukuTabKeshi-safari.zip) をダウンロードして展開する（`safari` フォルダーができます）
 2. ターミナルで次を実行（`safari` フォルダーの場所に合わせて変えてください）
    ```
    xcrun safari-web-extension-converter ./safari --app-name "重複タブ消し" --bundle-identifier com.hakusyaku-lab.jufuku-tab-keshi
@@ -75,6 +75,15 @@ Safari の拡張は Mac と Xcode（無料）が必要です。Windows では作
 iPhone・iPad で使うには、同じ Xcode プロジェクトから iOS 版としてビルドします（Apple Developer への登録が必要です）。
 
 **注意**：対象はボタンを押したブラウザの中のタブだけです。Edge と Chrome を両方開いていても、押した側の重複しか閉じません。
+
+## 新しい版の出し方（開発用）
+
+1. 3つの `manifest.json`（一番上・`firefox/`・`safari/`）の `version` を同じ番号に上げる
+2. `CHANGELOG.md` に `### 新しい番号（日付）` の項目を書く
+3. main に送る（プッシュする）
+
+あとは GitHub Actions が自動で、チェック → 3種類のZIP作成 → Releases への公開 までやります。
+過去の版は [Releases](https://github.com/hakusyaku-lab/jufuku-tab-keshi/releases) にあります。
 
 ## ライセンス
 
